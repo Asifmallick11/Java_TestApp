@@ -23,6 +23,7 @@ sudo docker container run --name jenkins-tutorial --rm --detach \
     --volume jenkins-docker-certs:/certs/client:ro \
     --volume "$HOME":/home --publish 8080:8080 jenkinsci/blueocean
 #-----------------------------------------------------------------------------------------
+#This works
 sudo docker container run --name jenkins-tutorial --rm --detach \
     --network jenkins \
     --env DOCKER_HOST=tcp://docker:2376 \
