@@ -7,7 +7,8 @@ pipeline {
    stages {
        stage('SCM CheckOut'){
           steps {
-            git 'https://github.com/Asifmallick11/Java_TestApp'
+            git branch: 'main',
+                url: 'https://github.com/Asifmallick11/Java_TestApp'
           }
           }
       stage('Compile-Package'){
