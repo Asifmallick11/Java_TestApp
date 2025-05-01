@@ -15,14 +15,7 @@ sudo docker container run --name jenkins-tutorial --rm --detach \
     --volume jenkins-data:/var/jenkins_home \
     --volume jenkins-docker-certs:/certs/client:ro \
     --volume "$HOME":/home --publish 8080:8080 myjenkins-blueocean:2.492.3
-#----------------------------------------------------------------------------------------
-sudo docker container run --name jenkins-tutorial --rm --detach \
-    --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
-    --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
-    --volume jenkins-data:/var/jenkins_home \
-    --volume jenkins-docker-certs:/certs/client:ro \
-    --volume "$HOME":/home --publish 8080:8080 jenkinsci/blueocean
-#-----------------------------------------------------------------------------------------
+
 #This works
 sudo docker container run --name jenkins-tutorial --rm --detach \
     --network jenkins \
@@ -34,4 +27,3 @@ sudo docker container run --name jenkins-tutorial --rm --detach \
     --volume "$HOME":/home \
     --publish 8080:8080 \
     jenkins/jenkins:lts
-#-----------------------------------------------------------------------------------------
